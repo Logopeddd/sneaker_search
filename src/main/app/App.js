@@ -1,5 +1,5 @@
 import React from 'react';
-import { App } from 'grommet';
+import { App as GrommetApp } from 'grommet';
 import '../../../node_modules/grommet-css';
 import wallpapers from '../../assets/main.jpg';
 
@@ -8,16 +8,16 @@ import MainScreenComponent from '../../components/mainScreen/mainScreen';
 import TilesComponent from '../../components/tiles/tiles';
 import './App.css';
 
-class _App extends React.Component {
+class App extends React.Component {
   render() {
     return (
-      <App centered={false}>
+      <GrommetApp centered={false}>
         <HeaderComponent />
         <MainScreenComponent wallpapers={wallpapers} />
         <TilesComponent />
-      </App>
+      </GrommetApp>
     );
   }
 }
 
-export default _App;
+export default App;

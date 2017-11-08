@@ -1,6 +1,6 @@
 import React from 'react';
 import { App as GrommetApp } from 'grommet';
-import '../../../node_modules/grommet-css';
+import 'grommet-css';
 import wallpapers from '../../assets/main.jpg';
 
 import HeaderComponent from '../../components/header/header';

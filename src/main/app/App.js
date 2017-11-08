@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import logo from '../../assets/logo.svg';
+import React from 'react';
+import { App } from 'grommet';
+import '../../../node_modules/grommet-css';
+import wallpapers from '../../assets/main.jpg';
+
+import HeaderComponent from '../../components/header/header';
+import MainScreenComponent from '../../components/mainScreen/mainScreen';
+import TilesComponent from '../../components/tiles/tiles';
 import './App.css';
 
-class App extends Component {
+class _App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <App centered={false}>
+        <HeaderComponent />
+        <MainScreenComponent wallpapers={wallpapers} />
+        <TilesComponent />
+      </App>
     );
   }
 }
 
-export default App;
+export default _App;

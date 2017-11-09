@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tiles } from 'grommet';
 
-
 const TilesComponent = props => {
   const Tile = props.tile;
-  const { elements } = props;
+  const { tiles } = props;
 
   return (
     <Tiles
@@ -15,18 +14,20 @@ const TilesComponent = props => {
       fill
       colorIndex="light-2"
     >
-      {elements.map(element => <Tile element={element} />)}
+      {tiles.map(tile => (
+        <Tile key={tile.key} heading={tile.heading} img={tile.img} />
+      ))}
     </Tiles>
   );
 };
 
 TilesComponent.defaultProps = {
-  elements: [],
+  tiles: [],
 };
 
 TilesComponent.propTypes = {
-  tile: PropTypes.element.isRequired,
-  elements: PropTypes.arrayOf(
+  tile: PropTypes.func.isRequired,
+  tiles: PropTypes.arrayOf(
     PropTypes.shape({
       heading: PropTypes.string,
       img: PropTypes.string,

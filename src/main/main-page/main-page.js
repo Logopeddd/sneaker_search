@@ -8,18 +8,18 @@ import kids from '../../assets/kids.png';
 
 import MainScreenComponent from '../../components/mainScreen/mainScreen';
 import TilesComponent from '../../components/tiles/tiles';
-import MainPageTile from '../../components/tiles/tile/mian_page-tile';
+import MainPageTile from '../../components/tiles/tile/main_page-tile';
 
-const mainPageElements = [
-  { heading: 'men', img: men },
-  { heading: 'women', img: women },
-  { heading: 'kids', img: kids },
+const mainPageTiles = [
+  { key: 'men', heading: 'men', img: men },
+  { key: 'women', heading: 'women', img: women },
+  { key: 'kids', heading: 'kids', img: kids },
 ];
 
 const MainPage = () => (
   <Box>
     <MainScreenComponent wallpapers={wallpapers} />
-    <TilesComponent tile={MainPageTile} elements={mainPageElements} />
+    <TilesComponent tile={MainPageTile} tiles={mainPageTiles} />
   </Box>
 );
 

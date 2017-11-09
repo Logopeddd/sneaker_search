@@ -8,7 +8,7 @@ const HeaderComponent = () => (
       flex="grow"
       pad={{ horizontal: 'medium' }}
       size={{ width: { max: 'xxlarge' } }}
-      responsive="false"
+      responsive={false}
     >
       <Title>Logo</Title>
       <Box flex="grow" align="end" direction="column" responsive>

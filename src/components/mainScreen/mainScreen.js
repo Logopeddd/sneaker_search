@@ -27,5 +27,5 @@ const MainScreenComponent = props => (
 export default MainScreenComponent;
 
 MainScreenComponent.propTypes = {
-  wallpapers: PropTypes.object.isRequired,
+  wallpapers: PropTypes.string.isRequired,
 };

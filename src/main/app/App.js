@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
-import logo from '../../assets/logo.svg';
+import React from 'react';
+import { App as GrommetApp } from 'grommet';
+import 'grommet-css';
+
+import HeaderComponent from '../../components/header/header';
+import MainPage from '../main-page/main-page';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <GrommetApp centered={false}>
+        <HeaderComponent />
+        <MainPage />
+      </GrommetApp>
     );
   }
 }

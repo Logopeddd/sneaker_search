@@ -6,9 +6,9 @@ import men from '../../assets/men.png';
 import women from '../../assets/women.png';
 import kids from '../../assets/kids.png';
 
-import MainScreenComponent from '../../components/mainScreen/mainScreen';
+import MainScreenComponent from '../../components/slide-show/slide-show';
 import TilesComponent from '../../components/tiles/tiles';
-import MainPageTile from '../../components/tiles/tile/main_page-tile';
+import MainPageTile from '../../components/tiles/tile/main-page_tile';
 
 const mainPageTiles = [
   { key: 'men', heading: 'men', img: men },

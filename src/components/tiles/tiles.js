@@ -7,13 +7,7 @@ const TilesComponent = props => {
   const { tiles } = props;
 
   return (
-    <Tiles
-      pad={{ horizontal: 'large' }}
-      selectable
-      flush={false}
-      fill
-      colorIndex="light-2"
-    >
+    <Tiles selectable>
       {tiles.map(tile => (
         <Tile key={tile.key} heading={tile.heading} img={tile.img} />
       ))}

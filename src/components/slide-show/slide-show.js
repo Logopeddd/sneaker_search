@@ -24,8 +24,8 @@ const MainScreenComponent = props => (
   </Box>
 );
 
-export default MainScreenComponent;
-
 MainScreenComponent.propTypes = {
   wallpapers: PropTypes.string.isRequired,
 };
+
+export default MainScreenComponent;

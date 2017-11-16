@@ -1,11 +1,23 @@
-import nike from '../../assets/logos/nike-logo.jpg';
-import adidas from '../../assets/logos/adidas-logo.jpg';
-import asics from '../../assets/logos/asics-logo.jpg';
-import nb from '../../assets/logos/new-balance-logo.jpg';
-import reebok from '../../assets/logos/reebok-classic-logo.jpg';
-import jordan from '../../assets/logos/jordan-logo.jpg';
-import roos from '../../assets/logos/roos-logo.jpg';
-import puma from '../../assets/logos/puma-logo.jpg';
-import ewing from '../../assets/logos/ewing-athletics-logo.jpg';
+import nike from '../../assets/logos/nike-logo.png';
+import reebok from '../../assets/logos/reebok-logo.png';
+import adidas from '../../assets/logos/adidas-logo.png';
+import converse from '../../assets/logos/converse-logo.png';
+import asics from '../../assets/logos/asics-logo.png';
+import nb from '../../assets/logos/new-balance-logo.png';
+import jordan from '../../assets/logos/jordan-logo.png';
+import roos from '../../assets/logos/kangaroos-logo.png';
+import puma from '../../assets/logos/puma-logo.png';
+import vans from '../../assets/logos/vans-logo.png';
 
-export default [nike, adidas, asics, nb, reebok, jordan, roos, puma, ewing];
+export default [
+  nike,
+  reebok,
+  adidas,
+  converse,
+  asics,
+  nb,
+  jordan,
+  roos,
+  puma,
+  vans,
+];

@@ -12,19 +12,19 @@ const settings = {
   arrows: false,
   dots: false,
   infinite: true,
-  slidesToShow: 9,
+  slidesToShow: 8,
   slidesToScroll: 1,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 7,
+        slidesToShow: 5,
       },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 5,
+        slidesToShow: 4,
       },
     },
     {
@@ -37,7 +37,7 @@ const settings = {
 };
 
 const ResponsiveCarousel = () => (
-  <Box colorIndex="light-1" separator="horizontal">
+  <Box colorIndex="light-2" separator="bottom">
     <Slider {...settings}>
       {logos.map(logo => (
         <Box key={logo} pad={{ horizontal: 'large' }}>

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Heading, Tile, Card, Image } from 'grommet';
 
 const MainPageTile = props => (
-  <Tile basis="1/3">
+  <Tile colorIndex="light-1">
     <Card
-      full="horizontal"
+      size={{ width: { msx: 'large' } }}
       responsive={false}
       thumbnail={<Image src={props.img} size="large" />}
       heading={

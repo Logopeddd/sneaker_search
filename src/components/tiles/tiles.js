@@ -7,7 +7,7 @@ const TilesComponent = props => {
   const { tiles } = props;
 
   return (
-    <Tiles selectable>
+    <Tiles selectable flush={false} fill>
       {tiles.map(tile => (
         <Tile key={tile.key} heading={tile.heading} img={tile.img} />
       ))}

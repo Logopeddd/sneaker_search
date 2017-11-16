@@ -1,8 +1,14 @@
 import React from 'react';
 import { Box, Header, Search, Title } from 'grommet';
+import './header.css';
 
 const HeaderComponent = () => (
-  <Header colorIndex="neutral-4" justify="center" size="small">
+  <Header
+    className="header"
+    colorIndex="grey-3-a"
+    justify="center"
+    size="small"
+  >
     <Box
       direction="row"
       flex="grow"

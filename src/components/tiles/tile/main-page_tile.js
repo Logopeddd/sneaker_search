@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Heading, Tile, Card } from 'grommet';
+import { Heading, Tile, Card, Image } from 'grommet';
 
 const MainPageTile = props => (
-  <Tile>
+  <Tile colorIndex="light-1">
     <Card
+      size={{ width: { msx: 'large' } }}
       responsive={false}
-      thumbnail={props.img}
+      thumbnail={<Image src={props.img} size="large" />}
       heading={
         <Heading tag="h2" align="center" uppercase>
           {props.heading}

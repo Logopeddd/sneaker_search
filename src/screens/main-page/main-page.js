@@ -9,6 +9,7 @@ import kids from '../../assets/kids.png';
 import MainScreenComponent from '../../components/slide-show/slide-show';
 import TilesComponent from '../../components/tiles/tiles';
 import MainPageTile from '../../components/tiles/tile/main-page_tile';
+import ResponsiveCarousel from '../../components/carousel/carousel';
 
 const mainPageTiles = [
   { key: 'men', heading: 'men', img: men },
@@ -17,8 +18,9 @@ const mainPageTiles = [
 ];
 
 const MainPage = () => (
-  <Box>
+  <Box colorIndex="light-2">
     <MainScreenComponent wallpapers={wallpapers} />
+    <ResponsiveCarousel />
     <TilesComponent tile={MainPageTile} tiles={mainPageTiles} />
   </Box>
 );

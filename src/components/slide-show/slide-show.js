@@ -8,7 +8,7 @@ const MainScreenComponent = props => (
     direction="row"
     justify="center"
     align="center"
-    colorIndex="light-2"
+    colorIndex="light-1"
   >
     <Box basis="1/2">
       <Image src={props.wallpapers} fit="cover" />
@@ -24,8 +24,8 @@ const MainScreenComponent = props => (
   </Box>
 );
 
-export default MainScreenComponent;
-
 MainScreenComponent.propTypes = {
   wallpapers: PropTypes.string.isRequired,
 };
+
+export default MainScreenComponent;

@@ -5,7 +5,7 @@ import './header.css';
 const HeaderComponent = () => (
   <Header
     className="header"
-    colorIndex="grey-3-a"
+    colorIndex="light-2-a"
     justify="center"
     size="small"
   >
@@ -15,7 +15,7 @@ const HeaderComponent = () => (
       pad={{ horizontal: 'medium' }}
       responsive={false}
     >
-      <Title>Logo</Title>
+      <Title className="header-title">SNEAKERSEARCH</Title>
       <Box flex="grow" align="end" direction="column" responsive>
         <Search responsive />
       </Box>

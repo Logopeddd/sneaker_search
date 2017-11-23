@@ -21,7 +21,7 @@ const MainPage = () => (
   <Box colorIndex="light-2">
     <MainScreenComponent wallpapers={wallpapers} />
     <ResponsiveCarousel />
-    <TilesComponent tile={MainPageTile} tiles={mainPageTiles} />
+    <TilesComponent selectable tile={MainPageTile} tiles={mainPageTiles} />
   </Box>
 );
 

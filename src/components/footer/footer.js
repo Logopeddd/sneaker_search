@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Menu, Anchor, ShopIcon, Paragraph } from 'grommet';
+import { Footer, Menu, Anchor, ShopIcon } from 'grommet';
 
 const Shops = [
   { key: '1', name: 'SNEAKERHEAD', url: 'https://sneakerhead.ru/' },
@@ -19,7 +19,6 @@ const FooterComponent = () => (
         <Anchor key={shop.key} href={shop.url} label={shop.name} />
       ))}
     </Menu>
-    <Paragraph>© 2017 Sneakersearch</Paragraph>
   </Footer>
 );
 

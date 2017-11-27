@@ -4,9 +4,16 @@ body {
   font-family: sans-serif;
 }
 
-.screen-content {
-  height: calc(100vh - 120px);
+.app > .screen-content {
+  height: calc(100vh - 72px);
   width: 100%;
+}
+
+.app .screen-content .grommetux-split__column {
+  height: 100%;
+}
+
+.app .screen-content .grommetux-split__column > * {
+  height: 100%;
   overflow-y: auto;
-  flex-direction: column;
 }

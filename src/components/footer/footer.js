@@ -10,11 +10,12 @@ const Shops = [
 
 const FooterComponent = () => (
   <Footer
+    size="small"
     justify="between"
     pad={{ horizontal: 'medium' }}
     colorIndex="neutral-1"
   >
-    <Menu direction="row" icon={<ShopIcon />} inline>
+    <Menu size="small" direction="row" icon={<ShopIcon />} inline>
       {Shops.map(shop => (
         <Anchor key={shop.key} href={shop.url} label={shop.name} />
       ))}

@@ -8,9 +8,10 @@ const TilesComponent = props => {
   const Tile = props.tile;
   const { tiles } = props;
   const { selectable } = props;
+  const { fill } = props;
 
   return (
-    <Tiles selectable={selectable} flush={false} fill>
+    <Tiles selectable={selectable} fill={fill} flush={false}>
       {tiles.map(tile => <Tile {...tile} />)}
     </Tiles>
   );
@@ -18,11 +19,13 @@ const TilesComponent = props => {
 
 TilesComponent.defaultProps = {
   selectable: false,
+  fill: false,
   tiles: [],
 };
 
 TilesComponent.propTypes = {
   selectable: PropTypes.bool,
+  fill: PropTypes.bool,
   tile: PropTypes.func.isRequired,
   tiles: PropTypes.arrayOf(
     PropTypes.shape({

@@ -5,7 +5,7 @@ import { Heading, Tile, Card, Image } from 'grommet';
 const CatalogPageTile = props => (
   <Tile className="catalog-tile" colorIndex="light-1">
     <Card
-      thumbnail={<Image src={props.img} />}
+      thumbnail={<Image src={props.img} full="horizontal" />}
       label={props.brand}
       heading={
         <Heading tag="h3" uppercase>

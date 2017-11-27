@@ -66,13 +66,9 @@ const items = [
 ];
 
 const CatalogPage = () => (
-  <Split priority="left" flex="left">
-    <Article colorIndex="light-2-a">
-      <HeaderComponent />
-      <Section className="screen-content">
-        <TilesComponent tile={CatalogPageTile} tiles={items} />
-      </Section>
-      <FooterComponent />
+  <Split className="screen-content" priority="left" flex="left">
+    <Article colorIndex="light-2-a" align="center">
+      <TilesComponent tile={CatalogPageTile} tiles={items} />
     </Article>
     <FilterSidebar />
   </Split>

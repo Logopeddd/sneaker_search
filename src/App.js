@@ -1,5 +1,6 @@
 import React from 'react';
 import { App as GrommetApp } from 'grommet';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'grommet-css';
 
 import HeaderComponent from './components/header/header';
@@ -10,9 +11,16 @@ import CatalogPage from './screens/catalog-page/catalog-page';
 class App extends React.Component {
   render() {
     return (
-      <GrommetApp centered={false}>
-        <CatalogPage />
-      </GrommetApp>
+      <Router>
+        <GrommetApp className="app" centered={false}>
+          <HeaderComponent />
+          <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route path="/" component={CatalogPage} />
+          </Switch>
+          <FooterComponent />
+        </GrommetApp>
+      </Router>
     );
   }
 }

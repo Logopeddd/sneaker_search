@@ -1,10 +1,9 @@
 import React from 'react';
-import { Split, Article, Section } from 'grommet';
+import { connect } from 'react-redux';
+import { Split, Article } from 'grommet';
 import FilterSidebar from '../../components/filter-sidebar/filter-sidebar';
 import TilesComponent from '../../components/tiles/tiles';
 import CatalogPageTile from '../../components/tiles/tile/catalog-page_tile';
-import HeaderComponent from '../../components/header/header';
-import FooterComponent from '../../components/footer/footer';
 
 const items = [
   {
@@ -65,13 +64,23 @@ const items = [
   },
 ];
 
-const CatalogPage = () => (
-  <Split className="screen-content" priority="left" flex="left">
-    <Article colorIndex="light-2-a" align="center">
-      <TilesComponent tile={CatalogPageTile} tiles={items} />
-    </Article>
-    <FilterSidebar />
-  </Split>
-);
+const CatalogPage = props => {
+  let filter;
+  if (props.visible) filter = <FilterSidebar />;
+  return (
+    <Split className="screen-content" priority="left" flex="left">
+      <Article colorIndex="light-2-a" align="center">
+        <TilesComponent tile={CatalogPageTile} tiles={items} />
+      </Article>
+      {filter}
+    </Split>
+  );
+};
 
-export default CatalogPage;
+function mapStateToProps(state) {
+  return {
+    visible: state.visible,
+  };
+}
+
+export default connect(mapStateToProps)(CatalogPage);

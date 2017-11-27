@@ -1,11 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Sidebar, Box, Label } from 'grommet';
 import FilterSidebarForm from './filter-sidebar_form';
 
 class FilterSidebar extends React.Component {
+  show = () => {
+    this.props.dispatch({ type: 'SHOW_SIDEBAR' });
+  };
+
+  hide = () => {
+    this.props.dispatch({ type: 'HIDE_SIDEBAR' });
+  };
+
   render() {
     return (
       <Sidebar
+        onClick={this.hide}
         separator="left"
         className="filter-sidebar"
         size="large"
@@ -22,4 +32,12 @@ class FilterSidebar extends React.Component {
     );
   }
 }
-export default FilterSidebar;
+
+function mapStateToProps(state) {
+    return {
+        visible: state.visible,
+    };
+}
+
+
+export default connect(mapStateToProps)(FilterSidebar);

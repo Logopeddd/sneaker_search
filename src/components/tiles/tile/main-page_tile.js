@@ -5,7 +5,7 @@ import { Heading, Tile, Card, Image } from 'grommet';
 const MainPageTile = props => (
   <Tile colorIndex="light-1">
     <Card
-      size={{ width: { msx: 'large' } }}
+      size={{ width: { max: 'large' } }}
       responsive={false}
       thumbnail={<Image src={props.img} size="large" />}
       heading={

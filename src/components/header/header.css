@@ -1,4 +1,8 @@
-.header {
-  position: absolute;
-  width: 100%;
+@font-face {
+  font-family: ElementalEnd;
+  src: url(../../assets/fonts/ElementalEnd.ttf);
+}
+
+.header-title {
+  font-family: ElementalEnd, sans-serif;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Split, Article } from 'grommet';
+import { sidebarHide } from '../../actions/sidebar';
 import FilterSidebar from '../../components/filter-sidebar/filter-sidebar';
 import TilesComponent from '../../components/tiles/tiles';
 import CatalogPageTile from '../../components/tiles/tile/catalog-page_tile';
@@ -65,8 +66,9 @@ const items = [
 ];
 
 const CatalogPage = props => {
+  const { sidebar: { enabled } } = props;
   let filter;
-  if (props.visible) filter = <FilterSidebar />;
+  if (enabled) filter = <FilterSidebar />;
   return (
     <Split className="screen-content" priority="left" flex="left">
       <Article colorIndex="light-2-a" align="center">
@@ -77,10 +79,8 @@ const CatalogPage = props => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    visible: state.visible,
-  };
-}
+const mapStateToProps = state => ({
+  sidebar: state.sidebar,
+});
 
 export default connect(mapStateToProps)(CatalogPage);

@@ -6,13 +6,9 @@ import FilterSidebarForm from './filter-sidebar_form';
 import { sidebarEnabled } from '../../actions/sidebar';
 
 class FilterSidebar extends React.Component {
-  constructor() {
-    super();
-    this.onClose = this.onClose.bind(this);
-  }
-  onClose() {
+  onClose = () => {
     this.props.dispatch(sidebarEnabled(false));
-  }
+  };
 
   render() {
     return (

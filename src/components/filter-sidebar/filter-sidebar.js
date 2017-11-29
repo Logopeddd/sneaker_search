@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Sidebar, Box, Label, Header, Title, Button } from 'grommet';
+import { Sidebar, Box, Label } from 'grommet';
 import FilterSidebarForm from './filter-sidebar_form';
 import { sidebarEnabled } from '../../actions/sidebar';
 

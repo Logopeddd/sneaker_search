@@ -1,8 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Sidebar, Box, Label } from 'grommet';
 import FilterSidebarForm from './filter-sidebar_form';
+import { sidebarEnabled } from '../../actions/sidebar';
 
 class FilterSidebar extends React.Component {
+  onClose = () => {
+    this.props.dispatch(sidebarEnabled(false));
+  };
+
   render() {
     return (
       <Sidebar
@@ -17,9 +24,18 @@ class FilterSidebar extends React.Component {
             ??? items found
           </Label>
         </Box>
-        <FilterSidebarForm />
+        <FilterSidebarForm onClick={this.onClose} />
       </Sidebar>
     );
   }
 }
-export default FilterSidebar;
+
+FilterSidebar.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  sidebar: state.sidebar,
+});
+
+export default connect(mapStateToProps)(FilterSidebar);

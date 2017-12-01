@@ -1,10 +1,10 @@
 import React from 'react';
-import { Split, Article, Section } from 'grommet';
+import { connect } from 'react-redux';
+import { Split, Article } from 'grommet';
+import { sidebarHide } from '../../actions/sidebar';
 import FilterSidebar from '../../components/filter-sidebar/filter-sidebar';
 import TilesComponent from '../../components/tiles/tiles';
 import CatalogPageTile from '../../components/tiles/tile/catalog-page_tile';
-import HeaderComponent from '../../components/header/header';
-import FooterComponent from '../../components/footer/footer';
 
 const items = [
   {
@@ -65,13 +65,22 @@ const items = [
   },
 ];
 
-const CatalogPage = () => (
-  <Split className="screen-content" priority="left" flex="left">
-    <Article colorIndex="light-2-a" align="center">
-      <TilesComponent tile={CatalogPageTile} tiles={items} />
-    </Article>
-    <FilterSidebar />
-  </Split>
-);
+const CatalogPage = props => {
+  const { sidebar: { enabled } } = props;
+  let filter;
+  if (enabled) filter = <FilterSidebar />;
+  return (
+    <Split className="screen-content" priority="left" flex="left">
+      <Article colorIndex="light-2-a" align="center">
+        <TilesComponent tile={CatalogPageTile} tiles={items} />
+      </Article>
+      {filter}
+    </Split>
+  );
+};
 
-export default CatalogPage;
+const mapStateToProps = state => ({
+  sidebar: state.sidebar,
+});
+
+export default connect(mapStateToProps)(CatalogPage);

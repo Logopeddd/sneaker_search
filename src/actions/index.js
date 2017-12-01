@@ -1,0 +1,1 @@
+export const SIDEBAR_ENABLED = 'SIDEBAR_ENABLED';

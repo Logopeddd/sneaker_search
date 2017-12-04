@@ -25,7 +25,8 @@ class App extends React.Component {
             <HeaderComponent />
             <Switch>
               <Route exact path="/" component={MainPage} />
-              <Route path="/" component={CatalogPage} />
+              <Route exact path="/catalog/" component={CatalogPage} />
+              <Route path="/catalog/:department" component={CatalogPage} />
             </Switch>
             <FooterComponent />
           </GrommetApp>

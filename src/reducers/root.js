@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 
-import SidebarReducer from './sidebar';
+import sidebarReducer from './sidebar';
 
 const rootReducer = combineReducers({
-  sidebar: SidebarReducer,
+  sidebar: sidebarReducer,
+  form: formReducer,
 });
 
 export default rootReducer;

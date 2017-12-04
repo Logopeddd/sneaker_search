@@ -10,7 +10,7 @@ const MainPageTile = props => (
       thumbnail={<Image src={props.img} size="large" />}
       heading={
         <Heading tag="h2" align="center" uppercase>
-          <Anchor path={`/${props.heading}`}>{props.heading}</Anchor>
+          <Anchor path={`/catalog/${props.heading}`}>{props.heading}</Anchor>
         </Heading>
       }
     />

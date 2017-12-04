@@ -10,14 +10,44 @@ import puma from '../../assets/logos/puma-logo.png';
 import vans from '../../assets/logos/vans-logo.png';
 
 export default [
-  nike,
-  reebok,
-  adidas,
-  converse,
-  asics,
-  nb,
-  jordan,
-  roos,
-  puma,
-  vans,
+  {
+    src: nike,
+    key: 'Nike',
+  },
+  {
+    src: reebok,
+    key: 'Reebok',
+  },
+  {
+    src: adidas,
+    key: 'Adidas',
+  },
+  {
+    src: converse,
+    key: 'Converse',
+  },
+  {
+    src: asics,
+    key: 'Asics',
+  },
+  {
+    src: nb,
+    key: 'New Balance',
+  },
+  {
+    src: jordan,
+    key: 'Air Jordan',
+  },
+  {
+    src: roos,
+    key: 'Roos',
+  },
+  {
+    src: puma,
+    key: 'Puma',
+  },
+  {
+    src: vans,
+    key: 'Vans',
+  },
 ];

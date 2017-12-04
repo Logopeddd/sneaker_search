@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { Box } from 'grommet';
 
 import wallpapers from '../../assets/main.jpg';
@@ -25,4 +27,9 @@ const MainPage = () => (
   </Box>
 );
 
-export default MainPage;
+const mapDispatchToProps = state => ({
+  sidebar: state.sidebar,
+  filter: state.form.filter || {},
+});
+
+export default connect(mapDispatchToProps)(MainPage);

@@ -15,8 +15,9 @@ class Sidebar extends React.Component {
       <GrommetSidebar
         separator="right"
         className="filter-sidebar"
-        colorIndex="light-2-a"
-        fixed
+        colorIndex="light-1"
+        full
+        size="large"
       >
         <Box size="large" colorIndex="grey-2-a">
           <Label margin="small" uppercase align="center">

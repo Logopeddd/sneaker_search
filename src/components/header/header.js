@@ -4,19 +4,21 @@ import './header.css';
 
 const HeaderComponent = () => (
   <Header
-    separator="bottom"
-    colorIndex="light-2-a"
+    className="header-component"
+    colorIndex="light-1-a"
     justify="center"
     size="small"
   >
     <Box
       direction="row"
       flex="grow"
-      pad={{ horizontal: 'medium' }}
+      pad={{ horizontal: 'xlarge' }}
       responsive={false}
     >
       <Title className="header-title">
-        <Anchor path="/">SNEAKERSEARCH</Anchor>
+        <Anchor className="no-decoration" path="/">
+          SNEAKERSEARCH
+        </Anchor>
       </Title>
     </Box>
   </Header>

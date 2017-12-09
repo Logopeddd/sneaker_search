@@ -1,8 +1,11 @@
-.catalog-tile {
-  max-width: 320px;
+.grommetux-tiles:not(.grommetux-tiles--flush) > .grommetux-tile.main-page_tile {
+  margin: 20px;
 }
+
 .main-page_tile {
+  margin: 20px;
   position: relative;
+  flex-basis: 30%;
 }
 
 .main-page_tile a::before {

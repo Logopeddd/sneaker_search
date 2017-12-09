@@ -23,7 +23,13 @@ const MainPage = () => (
   <Box colorIndex="light-2">
     <MainScreenComponent wallpapers={wallpapers} />
     <ResponsiveCarousel />
-    <TilesComponent selectable fill tile={MainPageTile} tiles={mainPageTiles} />
+    <TilesComponent
+      selectable
+      fill
+      tile={MainPageTile}
+      tiles={mainPageTiles}
+      pad={{ horizontal: 'xlarge', vertical: 'medium' }}
+    />
   </Box>
 );
 

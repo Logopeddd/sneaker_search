@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Heading, Tile, Card, Image } from 'grommet';
+import { Heading, Tile, Card, Image, Anchor } from 'grommet';
 
 const CatalogPageTile = props => (
   <Tile className="catalog-tile" colorIndex="light-1">
@@ -9,7 +9,18 @@ const CatalogPageTile = props => (
       label={props.brand}
       heading={
         <Heading tag="h3" uppercase>
-          {props.name}
+          <Anchor
+            path={{
+              pathname: `/catalog/${props.id}/detail`,
+              state: {
+                name: props.name,
+                brand: props.brand,
+                img: props.img,
+              },
+            }}
+          >
+            {props.name}
+          </Anchor>
         </Heading>
       }
       description={`${props.price}$`}

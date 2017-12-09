@@ -6,13 +6,10 @@ import './tiles.css';
 
 const TilesComponent = props => {
   const Tile = props.tile;
-  const { tiles } = props;
-  const { selectable } = props;
-  const { fill } = props;
-
+  const { tiles, selectable, fill, pad } = props;
   return (
-    <Tiles selectable={selectable} fill={fill} flush={false}>
-      {tiles.map(tile => <Tile {...tile} />)}
+    <Tiles selectable={selectable} fill={fill} flush={false} pad={pad}>
+      {tiles.map(tile => <Tile {...tile} key={tile.id} />)}
     </Tiles>
   );
 };

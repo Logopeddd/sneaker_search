@@ -1,6 +1,6 @@
 export default [
   {
-    key: '1',
+    id: '1',
     img: 'https://goo.gl/1rS2ao',
     brand: 'Adidas',
     name: 'YEEZY BOOST 350 V2 "BELUGA 2.0"',
@@ -9,7 +9,7 @@ export default [
     price: 550,
   },
   {
-    key: '2',
+    id: '2',
     img: 'https://goo.gl/yp3nYv',
     brand: 'Air Jordan',
     name: '11 RETRO "WIN LIKE \'82"',
@@ -18,7 +18,7 @@ export default [
     price: 300,
   },
   {
-    key: '3',
+    id: '3',
     img: 'https://goo.gl/u1H1Hq',
     brand: 'Nike',
     name: 'Air Max 97 Og Qs "Silver Bullet 2017"',
@@ -27,7 +27,7 @@ export default [
     price: 225,
   },
   {
-    key: '4',
+    id: '4',
     img: 'https://goo.gl/qzzWvL',
     brand: 'Asics',
     name: 'Gel-Lyte V "Diamond"',
@@ -36,7 +36,7 @@ export default [
     price: 160,
   },
   {
-    key: '5',
+    id: '5',
     img: 'https://goo.gl/XBXzA6',
     brand: 'Puma',
     name: 'Disc Blaze "Bape"',
@@ -45,7 +45,7 @@ export default [
     price: 45000,
   },
   {
-    key: '6',
+    id: '6',
     img: 'https://goo.gl/7SKxwS',
     brand: 'Reebok',
     name: 'Instapump Fury "Mita X Bape"',
@@ -54,7 +54,7 @@ export default [
     price: 225,
   },
   {
-    key: '7',
+    id: '7',
     img: 'https://goo.gl/zwZrk2',
     brand: 'Saucony',
     name: 'Grid 9000 "Snow Beach"',
@@ -63,7 +63,7 @@ export default [
     price: 200,
   },
   {
-    key: '8',
+    id: '8',
     img: 'https://goo.gl/RWPJEy',
     brand: 'Nike',
     name: 'Air Mag',
@@ -72,7 +72,7 @@ export default [
     price: 45000,
   },
   {
-    key: '9',
+    id: '9',
     img: 'https://goo.gl/3wxeYy',
     brand: 'Jordan',
     name: '6 RETRO "GOLDEN HARVEST"',
@@ -81,7 +81,7 @@ export default [
     price: 200,
   },
   {
-    key: '10',
+    id: '10',
     img: 'https://goo.gl/YVv71Z',
     brand: 'Adidas',
     name: 'Nmd R1 W',

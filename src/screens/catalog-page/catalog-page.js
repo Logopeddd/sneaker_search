@@ -1,15 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Split, Article } from 'grommet';
-import Sidebar from '../../components/sidebar/sidebar';
+import { Article, Heading, Anchor, Section, Box } from 'grommet';
+import ScrollToTop from '../../components/scroll-to-top/scroll-to-top';
+
+import FilterComponent from '../../components/filter/filter';
 import TilesComponent from '../../components/tiles/tiles';
 import CatalogPageTile from '../../components/tiles/tile/catalog-page_tile';
 
 import items from '../../assets/items';
 
+import './catalog-page.css';
+
 const CatalogPage = props => {
   const {
-    sidebar: { enabled },
+    filterOn,
     filter: { values },
     match: { params },
     location: { state },
@@ -33,20 +37,33 @@ const CatalogPage = props => {
 
   let filter;
   const brand = state ? state.brand : [];
-  if (enabled)
-    filter = <Sidebar amount={tiles.length} initialValues={{ brand }} />;
+  if (filterOn)
+    filter = (
+      <FilterComponent amount={tiles.length} initialValues={{ brand }} />
+    );
   return (
-    <Split className="screen-content" priority="right" flex="right">
-      {filter}
-      <Article colorIndex="light-2-a" align="center">
+    <Article
+      className="screen-content"
+      colorIndex="light-2-a"
+      pad={{ horizontal: 'xlarge' }}
+    >
+      <Heading className="no-margin-bottom" uppercase tag="h4" margin="small">
+        <Anchor path="/">home</Anchor> / catalog
+      </Heading>
+      <Heading uppercase strong align="center" tag="h2">
+        {params.department}
+      </Heading>
+      <Section pad="none" align="start" direction="row" colorIndex="light-2-a">
+        <ScrollToTop />
+        {filter}
         <TilesComponent tile={CatalogPageTile} tiles={tiles} />
-      </Article>
-    </Split>
+      </Section>
+    </Article>
   );
 };
 
 const mapStateToProps = state => ({
-  sidebar: state.sidebar,
+  filterOn: state.filter,
   filter: state.form.filter || {},
 });
 

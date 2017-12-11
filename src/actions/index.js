@@ -1,1 +1,1 @@
-export const SIDEBAR_ENABLED = 'SIDEBAR_ENABLED';
+export const FILTER_DISPLAY = 'FILTER_DISPLAY';

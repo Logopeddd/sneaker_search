@@ -1,25 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Sidebar as GrommetSidebar, Box, Label } from 'grommet';
+import { Box, Label } from 'grommet';
 import FilterForm from '../forms/filter-form';
-import { sidebarEnabled } from '../../actions/sidebar';
+import { filterDisplay } from '../../actions/filter';
 
-class Sidebar extends React.Component {
+import './filter.css';
+
+class FilterComponent extends React.Component {
   onClose = () => {
-    this.props.dispatch(sidebarEnabled(false));
+    this.props.dispatch(filterDisplay(false));
   };
 
   render() {
     return (
-      <GrommetSidebar
-        separator="right"
-        className="filter-sidebar"
-        colorIndex="light-1"
-        full
-        size="large"
-      >
-        <Box size="large" colorIndex="grey-2-a">
+      <Box className="filter-component" colorIndex="light-1">
+        <Box colorIndex="grey-2-a" onClick={this.onClose}>
           <Label margin="small" uppercase align="center">
             {this.props.amount} items found
           </Label>
@@ -28,12 +24,12 @@ class Sidebar extends React.Component {
           initialValues={this.props.initialValues}
           onSubmit={this.onClose}
         />
-      </GrommetSidebar>
+      </Box>
     );
   }
 }
 
-Sidebar.propTypes = {
+FilterComponent.propTypes = {
   dispatch: PropTypes.func.isRequired,
   amount: PropTypes.number.isRequired,
   initialValues: PropTypes.shape({
@@ -42,7 +38,7 @@ Sidebar.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  sidebar: state.sidebar,
+  filter: state.filter,
 });
 
-export default connect(mapStateToProps)(Sidebar);
+export default connect(mapStateToProps)(FilterComponent);

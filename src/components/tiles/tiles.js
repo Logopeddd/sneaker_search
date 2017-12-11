@@ -6,10 +6,16 @@ import './tiles.css';
 
 const TilesComponent = props => {
   const Tile = props.tile;
-  const { tiles, selectable, fill, pad } = props;
+  const { tiles, selectable, fill, flush, pad, margin } = props;
   return (
-    <Tiles selectable={selectable} fill={fill} flush={false} pad={pad}>
-      {tiles.map(tile => <Tile {...tile} key={tile.id} />)}
+    <Tiles
+      selectable={selectable}
+      fill={fill}
+      flush={flush}
+      pad={pad}
+      margin={margin}
+    >
+      {tiles.map(tile => <Tile key={tile.id} {...tile} />)}
     </Tiles>
   );
 };
@@ -17,12 +23,18 @@ const TilesComponent = props => {
 TilesComponent.defaultProps = {
   selectable: false,
   fill: false,
+  flush: false,
+  pad: 'none',
+  margin: 'none',
   tiles: [],
 };
 
 TilesComponent.propTypes = {
   selectable: PropTypes.bool,
   fill: PropTypes.bool,
+  flush: PropTypes.bool,
+  pad: PropTypes.oneOfType([PropTypes.string, PropTypes.shape]),
+  margin: PropTypes.oneOfType([PropTypes.string, PropTypes.shape]),
   tile: PropTypes.func.isRequired,
   tiles: PropTypes.arrayOf(
     PropTypes.shape({

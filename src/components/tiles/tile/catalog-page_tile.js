@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Heading, Tile, Card, Image, Anchor } from 'grommet';
 
 const CatalogPageTile = props => (
-  <Tile className="catalog-tile" colorIndex="light-1">
+  <Tile className="catalog-page_tile" colorIndex="light-1">
     <Card
       thumbnail={<Image src={props.img} full="horizontal" />}
       label={props.brand}
       heading={
-        <Heading tag="h3" uppercase>
+        <Heading tag="h4" uppercase>
           <Anchor
             path={{
               pathname: `/catalog/${props.id}/detail`,

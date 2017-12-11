@@ -5,9 +5,11 @@ import './header.css';
 const HeaderComponent = () => (
   <Header
     className="header-component"
-    colorIndex="light-1-a"
+    colorIndex="light-1"
     justify="center"
     size="small"
+    fixed
+    separator="bottom"
   >
     <Box
       direction="row"

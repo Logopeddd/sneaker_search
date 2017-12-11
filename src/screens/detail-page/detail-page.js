@@ -15,17 +15,10 @@ import PropTypes from 'prop-types';
 const DetailPage = props => {
   const { location } = props;
   return (
-    <Article
-      className="screen-content"
-      colorIndex="light-2-a"
-      pad={{ horizontal: 'xlarge' }}
-    >
+    <Article colorIndex="light-2-a" pad={{ horizontal: 'xlarge' }}>
       <Heading uppercase tag="h4" margin="small">
-        <Anchor path="/">home</Anchor>
-        /
-        <Anchor path="/catalog">catalog</Anchor>
-        /
-        <Anchor path={location.pathname}>{location.state.name}</Anchor>
+        <Anchor path="/">home</Anchor> /{' '}
+        <Anchor path="/catalog">catalog</Anchor> / {location.state.name}
       </Heading>
       <Heading align="center" strong uppercase tag="h4">
         {location.state.brand}

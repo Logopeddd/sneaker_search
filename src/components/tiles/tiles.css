@@ -16,3 +16,9 @@
   top: 0;
   left: 0;
 }
+
+.grommetux-tiles:not(.grommetux-tiles--flush)
+  > .grommetux-tile.catalog-page_tile {
+  flex-basis: 23%;
+  margin: 0 0 2% 2%;
+}

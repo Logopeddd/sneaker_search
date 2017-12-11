@@ -1,5 +1,5 @@
-import { FILTER_DISPLAY } from '../actions';
+import { CHANGE_FILTER_VISIBILITY } from '../actions';
 
 export function filterDisplay(status) {
-  return { type: FILTER_DISPLAY, status };
+  return { type: CHANGE_FILTER_VISIBILITY, status };
 }

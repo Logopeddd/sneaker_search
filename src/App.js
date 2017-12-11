@@ -1,9 +1,11 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { App as GrommetApp } from 'grommet';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'grommet-css';
+import thunk from 'redux-thunk';
+
 import reducers from './reducers/root';
 
 import HeaderComponent from './components/header/header';
@@ -15,6 +17,7 @@ import DetailPage from './screens/detail-page/detail-page';
 const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(thunk),
 );
 
 class App extends React.Component {

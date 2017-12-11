@@ -1,10 +1,10 @@
-import { FILTER_DISPLAY } from '../actions';
+import { CHANGE_FILTER_VISIBILITY } from '../actions';
 
 const initialState = 'true';
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case FILTER_DISPLAY:
+    case CHANGE_FILTER_VISIBILITY:
       return action.status;
     default:
       return state;

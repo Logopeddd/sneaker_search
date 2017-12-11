@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Article, Heading, Anchor, Section, Box } from 'grommet';
+import { Article, Heading, Anchor, Section } from 'grommet';
 import ScrollToTop from '../../components/scroll-to-top/scroll-to-top';
 
 import FilterComponent from '../../components/filter/filter';
@@ -8,12 +8,11 @@ import TilesComponent from '../../components/tiles/tiles';
 import CatalogPageTile from '../../components/tiles/tile/catalog-page_tile';
 
 import items from '../../assets/items';
-
 import './catalog-page.css';
 
 const CatalogPage = props => {
   const {
-    filterOn,
+    filterOnDisplay,
     filter: { values },
     match: { params },
     location: { state },
@@ -27,7 +26,7 @@ const CatalogPage = props => {
       tiles = tiles.filter(item => values.brand.includes(item.brand));
     if (values.size && !!values.size.length)
       tiles = tiles.filter(item =>
-        values.size.some(size => item.size.includes(size)),
+        values.size.some(size => item.sizes.includes(size)),
       );
     if (values.minPrice)
       tiles = tiles.filter(item => item.price > values.minPrice);
@@ -37,7 +36,7 @@ const CatalogPage = props => {
 
   let filter;
   const brand = state ? state.brand : [];
-  if (filterOn)
+  if (filterOnDisplay)
     filter = (
       <FilterComponent amount={tiles.length} initialValues={{ brand }} />
     );
@@ -47,6 +46,7 @@ const CatalogPage = props => {
       colorIndex="light-2-a"
       pad={{ horizontal: 'xlarge' }}
     >
+      <ScrollToTop />
       <Heading className="no-margin-bottom" uppercase tag="h4" margin="small">
         <Anchor path="/">home</Anchor> / catalog
       </Heading>
@@ -54,7 +54,6 @@ const CatalogPage = props => {
         {params.department}
       </Heading>
       <Section pad="none" align="start" direction="row" colorIndex="light-2-a">
-        <ScrollToTop />
         {filter}
         <TilesComponent tile={CatalogPageTile} tiles={tiles} />
       </Section>
@@ -63,7 +62,7 @@ const CatalogPage = props => {
 };
 
 const mapStateToProps = state => ({
-  filterOn: state.filter,
+  filterOnDisplay: state.filter,
   filter: state.form.filter || {},
 });
 

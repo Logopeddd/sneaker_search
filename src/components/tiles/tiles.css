@@ -22,3 +22,9 @@
   flex-basis: 23%;
   margin: 0 0 2% 2%;
 }
+
+.grommetux-tiles:not(.grommetux-tiles--flush)
+  > .grommetux-tile.detail-page_tile {
+  flex-basis: 18%;
+  margin: 0 2% 2% 0;
+}

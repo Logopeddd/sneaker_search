@@ -1,12 +1,10 @@
 import React from 'react';
 
 class ScrollToTop extends React.Component {
-  componentDidMount(prevProps) {
+  componentDidMount() {
     window.scrollTo(0, 0);
   }
 
-  render() {
-    return null;
-  }
+  render = () => null;
 }
 export default ScrollToTop;

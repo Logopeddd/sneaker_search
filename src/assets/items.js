@@ -5,7 +5,7 @@ export default [
     brand: 'Adidas',
     name: 'YEEZY BOOST 350 V2 "BELUGA 2.0"',
     department: ['men'],
-    size: ['8', '10', '12'],
+    sizes: [{ size: '8' }, { size: '10' }, { size: '12' }],
     price: 550,
   },
   {
@@ -14,7 +14,7 @@ export default [
     brand: 'Air Jordan',
     name: '11 RETRO "WIN LIKE \'82"',
     department: ['men'],
-    size: ['11', '12', '13'],
+    sizes: [{ size: '11' }, { size: '13' }, { size: '12' }],
     price: 300,
   },
   {
@@ -23,7 +23,8 @@ export default [
     brand: 'Nike',
     name: 'Air Max 97 Og Qs "Silver Bullet 2017"',
     department: ['men', 'women', 'kids'],
-    size: ['5', '8', '10'],
+
+    sizes: [{ size: '8' }, { size: '10' }, { size: '5' }],
     price: 225,
   },
   {
@@ -32,7 +33,8 @@ export default [
     brand: 'Asics',
     name: 'Gel-Lyte V "Diamond"',
     department: ['women'],
-    size: ['6', '7', '8'],
+
+    sizes: [{ size: '6' }, { size: '7' }, { size: '8' }],
     price: 160,
   },
   {
@@ -41,7 +43,8 @@ export default [
     brand: 'Puma',
     name: 'Disc Blaze "Bape"',
     department: ['men'],
-    size: ['10', '11'],
+
+    sizes: [{ size: '11' }, { size: '10' }, { size: '7' }],
     price: 45000,
   },
   {
@@ -50,7 +53,7 @@ export default [
     brand: 'Reebok',
     name: 'Instapump Fury "Mita X Bape"',
     department: ['men', 'women'],
-    size: ['8', '10', '11'],
+    sizes: [{ size: '8' }, { size: '10' }, { size: '11' }],
     price: 225,
   },
   {
@@ -59,7 +62,7 @@ export default [
     brand: 'Saucony',
     name: 'Grid 9000 "Snow Beach"',
     department: ['kids'],
-    size: ['4', '5', '6'],
+    sizes: [{ size: '4' }, { size: '5' }, { size: '6' }],
     price: 200,
   },
   {
@@ -68,7 +71,7 @@ export default [
     brand: 'Nike',
     name: 'Air Mag',
     department: ['men', 'kids'],
-    size: ['5', '6', '10', '13'],
+    sizes: [{ size: '5' }, { size: '6' }, { size: '13' }],
     price: 45000,
   },
   {
@@ -77,7 +80,8 @@ export default [
     brand: 'Jordan',
     name: '6 RETRO "GOLDEN HARVEST"',
     department: ['men', 'kids'],
-    size: ['5', '6', '10', '11', '12'],
+
+    sizes: [{ size: '10' }, { size: '11' }, { size: '12' }],
     price: 200,
   },
   {
@@ -86,7 +90,8 @@ export default [
     brand: 'Adidas',
     name: 'Nmd R1 W',
     department: ['women'],
-    size: ['5', '6', '7', '8'],
+
+    sizes: [{ size: '5' }, { size: '6' }, { size: '7' }],
     price: 160,
   },
 ];

@@ -26,7 +26,7 @@ const FilterForm = props => {
           <Field name="brand" component={SelectComponent} options={brands} />
         </AccordionPanel>
 
-        <AccordionPanel szie="small" heading="SIZE">
+        <AccordionPanel heading="SIZE">
           <Field name="size" component={SelectComponent} options={sizes} />
         </AccordionPanel>
       </Accordion>

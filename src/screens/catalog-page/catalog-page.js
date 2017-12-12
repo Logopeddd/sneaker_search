@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Article, Heading, Anchor, Section } from 'grommet';
 import ScrollToTop from '../../components/scroll-to-top/scroll-to-top';
 
@@ -63,7 +64,20 @@ const CatalogPage = props => {
 
 const mapStateToProps = state => ({
   filterOnDisplay: state.filter,
-  filter: state.form.filter || {},
+  filter: state.form.filter,
 });
+
+CatalogPage.defaultProps = {
+  filter: {},
+};
+
+CatalogPage.propTypes = {
+  filterOnDisplay: PropTypes.bool.isRequired,
+  filter: PropTypes.shape({ values: PropTypes.shape() }),
+  match: PropTypes.shape({
+    params: PropTypes.shape(),
+  }).isRequired,
+  location: PropTypes.shape().isRequired,
+};
 
 export default connect(mapStateToProps)(CatalogPage);

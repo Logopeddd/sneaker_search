@@ -26,7 +26,6 @@ class DetailPage extends React.Component {
 
   render() {
     const { product } = this.props;
-    console.log(this.props);
     return (
       <Article colorIndex="light-2-a" pad={{ horizontal: 'xlarge' }}>
         <Heading uppercase tag="h4" margin="small">
@@ -41,11 +40,7 @@ class DetailPage extends React.Component {
         </Heading>
         <Section direction="row">
           <Box basis="2/3">
-            <Carousel>
-              <Image src={product.img} />
-              <Image src={product.img} />
-              <Image src={product.img} />
-            </Carousel>
+            <Carousel>{product.img.map(img => <Image src={img} />)}</Carousel>
           </Box>
 
           <Box basis="1/3" margin={{ left: 'large' }}>
@@ -69,7 +64,7 @@ const mapStateToProps = state => ({
 });
 
 DetailPage.defaultProps = {
-  product: {},
+  product: { img: [] },
 };
 
 DetailPage.propTypes = {
@@ -77,6 +72,7 @@ DetailPage.propTypes = {
     params: PropTypes.shape(),
   }).isRequired,
   product: PropTypes.shape({
+    img: PropTypes.arrayOf(PropTypes.string),
     name: PropTypes.string,
     brand: PropTypes.string,
   }),

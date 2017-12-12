@@ -9,7 +9,7 @@ const CatalogPageTile = props => (
     colorIndex="light-1"
   >
     <Card
-      thumbnail={<Image src={props.img} full="horizontal" />}
+      thumbnail={<Image src={props.img[0]} full="horizontal" />}
       label={props.brand}
       heading={
         <Heading tag="h4" uppercase>
@@ -23,7 +23,7 @@ const CatalogPageTile = props => (
 
 CatalogPageTile.propTypes = {
   id: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
+  img: PropTypes.arrayOf(PropTypes.string).isRequired,
   brand: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,

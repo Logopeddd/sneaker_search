@@ -1,6 +1,6 @@
 import { CHANGE_FILTER_VISIBILITY } from '../actions';
 
-const initialState = 'true';
+const initialState = true;
 
 export default (state = initialState, action) => {
   switch (action.type) {

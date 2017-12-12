@@ -1,7 +1,7 @@
 export default [
   {
     id: '1',
-    img: 'https://goo.gl/1rS2ao',
+    img: ['https://goo.gl/1rS2ao', 'https://goo.gl/1rS2ao'],
     brand: 'Adidas',
     name: 'YEEZY BOOST 350 V2 "BELUGA 2.0"',
     department: ['men'],
@@ -10,7 +10,7 @@ export default [
   },
   {
     id: '2',
-    img: 'https://goo.gl/yp3nYv',
+    img: ['https://goo.gl/yp3nYv', 'https://goo.gl/1rS2ao'],
     brand: 'Air Jordan',
     name: '11 RETRO "WIN LIKE \'82"',
     department: ['men'],
@@ -19,7 +19,7 @@ export default [
   },
   {
     id: '3',
-    img: 'https://goo.gl/u1H1Hq',
+    img: ['https://goo.gl/u1H1Hq', 'https://goo.gl/1rS2ao'],
     brand: 'Nike',
     name: 'Air Max 97 Og Qs "Silver Bullet 2017"',
     department: ['men', 'women', 'kids'],
@@ -29,7 +29,7 @@ export default [
   },
   {
     id: '4',
-    img: 'https://goo.gl/qzzWvL',
+    img: ['https://goo.gl/qzzWvL', 'https://goo.gl/1rS2ao'],
     brand: 'Asics',
     name: 'Gel-Lyte V "Diamond"',
     department: ['women'],
@@ -39,7 +39,7 @@ export default [
   },
   {
     id: '5',
-    img: 'https://goo.gl/XBXzA6',
+    img: ['https://goo.gl/XBXzA6', 'https://goo.gl/1rS2ao'],
     brand: 'Puma',
     name: 'Disc Blaze "Bape"',
     department: ['men'],
@@ -49,7 +49,7 @@ export default [
   },
   {
     id: '6',
-    img: 'https://goo.gl/7SKxwS',
+    img: ['https://goo.gl/7SKxwS', 'https://goo.gl/1rS2ao'],
     brand: 'Reebok',
     name: 'Instapump Fury "Mita X Bape"',
     department: ['men', 'women'],
@@ -58,7 +58,7 @@ export default [
   },
   {
     id: '7',
-    img: 'https://goo.gl/zwZrk2',
+    img: ['https://goo.gl/zwZrk2', 'https://goo.gl/1rS2ao'],
     brand: 'Saucony',
     name: 'Grid 9000 "Snow Beach"',
     department: ['kids'],
@@ -67,7 +67,7 @@ export default [
   },
   {
     id: '8',
-    img: 'https://goo.gl/RWPJEy',
+    img: ['https://goo.gl/RWPJEy', 'https://goo.gl/1rS2ao'],
     brand: 'Nike',
     name: 'Air Mag',
     department: ['men', 'kids'],
@@ -76,7 +76,7 @@ export default [
   },
   {
     id: '9',
-    img: 'https://goo.gl/3wxeYy',
+    img: ['https://goo.gl/3wxeYy', 'https://goo.gl/1rS2ao'],
     brand: 'Jordan',
     name: '6 RETRO "GOLDEN HARVEST"',
     department: ['men', 'kids'],
@@ -86,7 +86,7 @@ export default [
   },
   {
     id: '10',
-    img: 'https://goo.gl/YVv71Z',
+    img: ['https://goo.gl/YVv71Z', 'https://goo.gl/1rS2ao'],
     brand: 'Adidas',
     name: 'Nmd R1 W',
     department: ['women'],

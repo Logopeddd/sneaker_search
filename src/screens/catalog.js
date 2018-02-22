@@ -22,18 +22,13 @@ class CatalogPage extends React.Component {
   }
 
   render() {
-    const {
-      filterOnDisplay,
-      loadProducts,
-      products,
-      match: { params },
-    } = this.props;
+    const { filterOnDisplay, products, match: { params } } = this.props;
 
     let filter;
     if (filterOnDisplay)
       filter = (
         <FilterComponent
-          handleSubmit={loadProducts}
+          handleSubmit={this.props.loadProducts}
           amount={products.length}
           initialValues={this.state.values}
         />

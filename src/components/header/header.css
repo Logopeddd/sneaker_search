@@ -3,6 +3,7 @@
   src: url(../../assets/fonts/ElementalEnd.ttf);
 }
 
-.header-title {
+.header-component .header-title > .grommetux-anchor {
   font-family: ElementalEnd, sans-serif;
+  color: rgba(59, 59, 59, 0.8);
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Box } from 'grommet';
+import { Article } from 'grommet';
 
 import wallpapers from '../../assets/main.jpg';
 import men from '../../assets/men.png';
@@ -20,11 +20,17 @@ const mainPageTiles = [
 ];
 
 const MainPage = () => (
-  <Box colorIndex="light-2">
+  <Article className="screen-content" colorIndex="light-2">
     <MainScreenComponent wallpapers={wallpapers} />
     <ResponsiveCarousel />
-    <TilesComponent selectable fill tile={MainPageTile} tiles={mainPageTiles} />
-  </Box>
+    <TilesComponent
+      selectable
+      fill
+      tile={MainPageTile}
+      tiles={mainPageTiles}
+      pad={{ horizontal: 'xlarge', vertical: 'medium' }}
+    />
+  </Article>
 );
 
 const mapDispatchToProps = state => ({

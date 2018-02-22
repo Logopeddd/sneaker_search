@@ -7,6 +7,9 @@
     "plugins": [
         "prettier"
     ],
+    "globals": {
+        "window": true
+    },
     "rules": {
         "prettier/prettier": ["error", {
             "singleQuote": true,

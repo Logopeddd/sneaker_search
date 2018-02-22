@@ -20,13 +20,13 @@ const FilterForm = props => {
   const { handleSubmit } = props;
 
   return (
-    <Form onSubmit={handleSubmit} pad={{ horizontal: 'medium' }}>
+    <Form compact onSubmit={handleSubmit} pad={{ horizontal: 'medium' }}>
       <Accordion openMulti>
-        <AccordionPanel pad={{ horizontal: 'medium' }} heading="BRAND">
+        <AccordionPanel heading="BRAND">
           <Field name="brand" component={SelectComponent} options={brands} />
         </AccordionPanel>
 
-        <AccordionPanel pad={{ horizontal: 'medium' }} heading="SIZE">
+        <AccordionPanel heading="SIZE">
           <Field name="size" component={SelectComponent} options={sizes} />
         </AccordionPanel>
       </Accordion>

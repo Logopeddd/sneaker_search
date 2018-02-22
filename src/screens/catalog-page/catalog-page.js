@@ -1,15 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Split, Article } from 'grommet';
-import Sidebar from '../../components/sidebar/sidebar';
+import PropTypes from 'prop-types';
+import { Article, Heading, Anchor, Section } from 'grommet';
+import ScrollToTop from '../../components/scroll-to-top/scroll-to-top';
+
+import FilterComponent from '../../components/filter/filter';
 import TilesComponent from '../../components/tiles/tiles';
 import CatalogPageTile from '../../components/tiles/tile/catalog-page_tile';
 
 import items from '../../assets/items';
+import './catalog-page.css';
 
 const CatalogPage = props => {
   const {
-    sidebar: { enabled },
+    filterOnDisplay,
     filter: { values },
     match: { params },
     location: { state },
@@ -23,7 +27,7 @@ const CatalogPage = props => {
       tiles = tiles.filter(item => values.brand.includes(item.brand));
     if (values.size && !!values.size.length)
       tiles = tiles.filter(item =>
-        values.size.some(size => item.size.includes(size)),
+        values.size.some(size => item.sizes.includes(size)),
       );
     if (values.minPrice)
       tiles = tiles.filter(item => item.price > values.minPrice);
@@ -33,21 +37,47 @@ const CatalogPage = props => {
 
   let filter;
   const brand = state ? state.brand : [];
-  if (enabled)
-    filter = <Sidebar amount={tiles.length} initialValues={{ brand }} />;
+  if (filterOnDisplay)
+    filter = (
+      <FilterComponent amount={tiles.length} initialValues={{ brand }} />
+    );
   return (
-    <Split className="screen-content" priority="right" flex="right">
-      {filter}
-      <Article colorIndex="light-2-a" align="center">
+    <Article
+      className="screen-content"
+      colorIndex="light-2-a"
+      pad={{ horizontal: 'xlarge' }}
+    >
+      <ScrollToTop />
+      <Heading className="no-margin-bottom" uppercase tag="h4" margin="small">
+        <Anchor path="/">home</Anchor> / catalog
+      </Heading>
+      <Heading uppercase strong align="center" tag="h2">
+        {params.department}
+      </Heading>
+      <Section pad="none" align="start" direction="row" colorIndex="light-2-a">
+        {filter}
         <TilesComponent tile={CatalogPageTile} tiles={tiles} />
-      </Article>
-    </Split>
+      </Section>
+    </Article>
   );
 };
 
 const mapStateToProps = state => ({
-  sidebar: state.sidebar,
-  filter: state.form.filter || {},
+  filterOnDisplay: state.filter,
+  filter: state.form.filter,
 });
+
+CatalogPage.defaultProps = {
+  filter: {},
+};
+
+CatalogPage.propTypes = {
+  filterOnDisplay: PropTypes.bool.isRequired,
+  filter: PropTypes.shape({ values: PropTypes.shape() }),
+  match: PropTypes.shape({
+    params: PropTypes.shape(),
+  }).isRequired,
+  location: PropTypes.shape().isRequired,
+};
 
 export default connect(mapStateToProps)(CatalogPage);

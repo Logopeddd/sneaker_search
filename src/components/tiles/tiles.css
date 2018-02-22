@@ -8,6 +8,10 @@
   flex-basis: 30%;
 }
 
+.catalog-page_tile_card {
+  justify-content: space-between;
+}
+
 .main-page_tile a::before {
   content: '';
   position: absolute;

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, Box } from 'grommet';
-import { Link } from 'react-router-dom';
-
+import { Image, Box, Anchor } from 'grommet';
 import Slider from 'react-slick';
+
+import { stringify } from 'qs';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import logos from '../../assets/logos/logos';
@@ -55,10 +56,10 @@ const ResponsiveCarousel = () => (
           pad={{ horizontal: 'large' }}
         >
           <Image src={logo.src} />
-          <Link
-            to={{
+          <Anchor
+            path={{
               pathname: '/catalog',
-              state: { brand: [logo.key] },
+              search: stringify({ brand: [logo.key] }),
             }}
           />
         </Box>

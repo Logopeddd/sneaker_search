@@ -1,15 +1,14 @@
 import React from 'react';
-import { Box, Header, Title, Anchor } from 'grommet';
+import { Box, Header as GrommetHeader, Title, Anchor, Search } from 'grommet';
 import './header.css';
 
-const HeaderComponent = () => (
-  <Header
+const Header = () => (
+  <GrommetHeader
     className="header-component"
     colorIndex="light-1"
     justify="center"
     size="small"
     fixed
-    separator="bottom"
   >
     <Box
       direction="row"
@@ -22,8 +21,11 @@ const HeaderComponent = () => (
           SNEAKERSEARCH
         </Anchor>
       </Title>
+      <Box flex="grow" align="end">
+        <Search size="small" placeHolder="Search" inline />
+      </Box>
     </Box>
-  </Header>
+  </GrommetHeader>
 );
 
-export default HeaderComponent;
+export default Header;

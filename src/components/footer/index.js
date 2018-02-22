@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Menu, Anchor, ShopIcon } from 'grommet';
+import { Footer as GrommetFooter, Menu, Anchor, ShopIcon } from 'grommet';
 
 const Shops = [
   { key: '1', name: 'SNEAKERHEAD', url: 'https://sneakerhead.ru/' },
@@ -8,8 +8,8 @@ const Shops = [
   { key: '4', name: 'FOOTSHOP', url: 'https://www.footshop.com' },
 ];
 
-const FooterComponent = () => (
-  <Footer
+const Footer = () => (
+  <GrommetFooter
     size="small"
     justify="between"
     pad={{ horizontal: 'medium' }}
@@ -20,7 +20,7 @@ const FooterComponent = () => (
         <Anchor key={shop.key} href={shop.url} label={shop.name} />
       ))}
     </Menu>
-  </Footer>
+  </GrommetFooter>
 );
 
-export default FooterComponent;
+export default Footer;

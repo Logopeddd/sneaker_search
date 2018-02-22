@@ -5,6 +5,9 @@ class ScrollToTop extends React.Component {
     window.scrollTo(0, 0);
   }
 
-  render = () => null;
+  render() {
+    return null;
+  }
 }
+
 export default ScrollToTop;

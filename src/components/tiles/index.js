@@ -1,26 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Tiles } from 'grommet';
+import { Tiles as GrommetTiles } from 'grommet';
 
 import './tiles.css';
 
-const TilesComponent = props => {
+const Tiles = props => {
   const Tile = props.tile;
-  const { tiles, selectable, fill, flush, pad, margin, keys } = props;
+  const {
+    tiles,
+    selectable,
+    fill,
+    flush,
+    pad,
+    margin,
+    keys,
+    onTileClick,
+  } = props;
   return (
-    <Tiles
+    <GrommetTiles
       selectable={selectable}
       fill={fill}
       flush={flush}
       pad={pad}
       margin={margin}
     >
-      {tiles.map(tile => <Tile key={tile[keys]} {...tile} />)}
-    </Tiles>
+      {tiles.map(tile => (
+        <Tile key={tile[keys]} onClick={onTileClick} {...tile} />
+      ))}
+    </GrommetTiles>
   );
 };
 
-TilesComponent.defaultProps = {
+Tiles.defaultProps = {
   selectable: false,
   fill: false,
   flush: false,
@@ -30,7 +41,7 @@ TilesComponent.defaultProps = {
   keys: 'id',
 };
 
-TilesComponent.propTypes = {
+Tiles.propTypes = {
   selectable: PropTypes.bool,
   fill: PropTypes.bool,
   flush: PropTypes.bool,
@@ -41,4 +52,4 @@ TilesComponent.propTypes = {
   tiles: PropTypes.arrayOf(PropTypes.shape),
 };
 
-export default TilesComponent;
+export default Tiles;

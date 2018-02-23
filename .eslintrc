@@ -7,8 +7,8 @@
     "plugins": [
         "prettier"
     ],
-    "globals": {
-        "window": true
+    "env": {
+        "browser": true
     },
     "rules": {
         "prettier/prettier": ["error", {

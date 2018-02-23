@@ -33,12 +33,14 @@ TableComponent.defaultProps = {
   shops: [],
 };
 
+const { arrayOf, shape, string, number } = PropTypes;
+
 TableComponent.propTypes = {
-  shops: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      price: PropTypes.number,
-      url: PropTypes.string,
+  shops: arrayOf(
+    shape({
+      name: string,
+      price: number,
+      url: string,
     }),
   ),
 };

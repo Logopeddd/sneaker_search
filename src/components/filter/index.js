@@ -2,14 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Box, Label } from 'grommet';
-import FilterForm from '../forms/filter-form';
-import { filterDisplay } from '../../actions/filter';
+import { stringify } from 'qs';
 
-import './filter.css';
+import history from '../../history';
+import FilterForm from '../forms/filter-form';
+import { showFilter } from '../../ducks/filter';
 
 class FilterComponent extends React.Component {
   onClose = () => {
-    this.props.dispatch(filterDisplay(false));
+    this.props.dispatch(showFilter(false));
+  };
+
+  handleChange = values => {
+    history.replace({ search: stringify(values) });
+    this.props.handleSubmit(values);
   };
 
   render() {
@@ -17,24 +23,28 @@ class FilterComponent extends React.Component {
       <Box className="filter-component" colorIndex="light-1">
         <Box colorIndex="grey-2-a" onClick={this.onClose}>
           <Label margin="small" uppercase align="center">
-            {this.props.amount} items found
+            {this.props.amount || 'no '} items found
           </Label>
         </Box>
         <FilterForm
+          destroyOnUnmount={false}
           initialValues={this.props.initialValues}
-          onSubmit={this.onClose}
+          onChange={this.handleChange}
         />
       </Box>
     );
   }
 }
 
+const { func, number, shape, arrayOf, string } = PropTypes;
+
 FilterComponent.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  amount: PropTypes.number.isRequired,
-  initialValues: PropTypes.shape({
-    brand: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dispatch: func.isRequired,
+  amount: number.isRequired,
+  initialValues: shape({
+    brand: arrayOf(string),
   }).isRequired,
+  handleSubmit: func.isRequired,
 };
 
 const mapStateToProps = state => ({

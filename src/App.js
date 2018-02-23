@@ -1,48 +1,49 @@
 import React from 'react';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 import { App as GrommetApp } from 'grommet';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'grommet-css';
-import thunk from 'redux-thunk';
 
-import reducers from './reducers/root';
+import HeaderComponent from './components/header';
+import FooterComponent from './components/footer';
+import HomePage from './screens/home';
+import CatalogPage from './screens/catalog';
+import DetailViewPage from './screens/detail-view';
 
-import HeaderComponent from './components/header/header';
-import FooterComponent from './components/footer/footer';
-import MainPage from './screens/main-page/main-page';
-import CatalogPage from './screens/catalog-page/catalog-page';
-import DetailPage from './screens/detail-page/detail-page';
-
-const store = createStore(
-  reducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(thunk),
-);
+const routes = [
+  {
+    path: '/',
+    exact: true,
+    component: HomePage,
+  },
+  {
+    path: '/catalog/:id/detail',
+    exact: true,
+    component: DetailViewPage,
+  },
+  {
+    path: '/catalog',
+    exact: false,
+    component: CatalogPage,
+  },
+];
 
 class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router>
-          <GrommetApp className="app" centered={false}>
-            <HeaderComponent />
-            <Switch>
-              <Route exact path="/" component={MainPage} />
-              <Route exact path="/catalog" component={CatalogPage} />
-              <Route
-                exact
-                path="/catalog/:department"
-                component={CatalogPage}
-              />
-              <Route path="/catalog/:id/detail" component={DetailPage} />
-            </Switch>
-            <FooterComponent />
-          </GrommetApp>
-        </Router>
-      </Provider>
-    );
-  }
+  render = () => (
+    <GrommetApp className="app" centered={false}>
+      <HeaderComponent />
+      <Switch>
+        {routes.map(route => (
+          <Route
+            key={route.path}
+            path={route.path}
+            exact={route.exact}
+            component={route.component}
+          />
+        ))}
+      </Switch>
+      <FooterComponent />
+    </GrommetApp>
+  );
 }
 
 export default App;

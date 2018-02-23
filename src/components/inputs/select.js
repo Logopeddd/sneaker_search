@@ -14,15 +14,15 @@ const SelectComponent = ({ input, options }) => (
   />
 );
 
+const { shape, func, oneOfType, string, number, arrayOf } = PropTypes;
+
 SelectComponent.propTypes = {
-  input: PropTypes.shape({
-    onChange: PropTypes.func.isRequired,
-    onBlur: PropTypes.func.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  input: shape({
+    onChange: func.isRequired,
+    onBlur: func.isRequired,
+    value: oneOfType([string, number]),
   }).isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  ).isRequired,
+  options: arrayOf(oneOfType([string, number])).isRequired,
 };
 
 export default SelectComponent;

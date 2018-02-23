@@ -49,14 +49,16 @@ SizesPanel.defaultProps = {
   price: null,
 };
 
+const { number, arrayOf, shape, string } = PropTypes;
+
 SizesPanel.propTypes = {
-  price: PropTypes.number,
-  sizes: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.string,
-      shops: PropTypes.arrayOf(
-        PropTypes.shape({
-          price: PropTypes.number,
+  price: number,
+  sizes: arrayOf(
+    shape({
+      value: string,
+      shops: arrayOf(
+        shape({
+          price: number,
         }),
       ),
     }),

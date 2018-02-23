@@ -6,16 +6,7 @@ import './tiles.css';
 
 const Tiles = props => {
   const Tile = props.tile;
-  const {
-    tiles,
-    selectable,
-    fill,
-    flush,
-    pad,
-    margin,
-    keys,
-    onTileClick,
-  } = props;
+  const { tiles, selectable, fill, flush, pad, margin, keys } = props;
   return (
     <GrommetTiles
       selectable={selectable}
@@ -24,9 +15,7 @@ const Tiles = props => {
       pad={pad}
       margin={margin}
     >
-      {tiles.map(tile => (
-        <Tile key={tile[keys]} onClick={onTileClick} {...tile} />
-      ))}
+      {tiles.map(tile => <Tile key={tile[keys]} {...tile} />)}
     </GrommetTiles>
   );
 };
@@ -41,15 +30,17 @@ Tiles.defaultProps = {
   keys: 'id',
 };
 
+const { bool, oneOfType, string, shape, func, arrayOf } = PropTypes;
+
 Tiles.propTypes = {
-  selectable: PropTypes.bool,
-  fill: PropTypes.bool,
-  flush: PropTypes.bool,
-  pad: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()]),
-  margin: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()]),
-  tile: PropTypes.func.isRequired,
-  keys: PropTypes.string,
-  tiles: PropTypes.arrayOf(PropTypes.shape),
+  selectable: bool,
+  fill: bool,
+  flush: bool,
+  pad: oneOfType([string, shape()]),
+  margin: oneOfType([string, shape()]),
+  tile: func.isRequired,
+  keys: string,
+  tiles: arrayOf(shape),
 };
 
 export default Tiles;

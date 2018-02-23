@@ -36,13 +36,15 @@ class FilterComponent extends React.Component {
   }
 }
 
+const { func, number, shape, arrayOf, string } = PropTypes;
+
 FilterComponent.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  amount: PropTypes.number.isRequired,
-  initialValues: PropTypes.shape({
-    brand: PropTypes.arrayOf(PropTypes.string),
+  dispatch: func.isRequired,
+  amount: number.isRequired,
+  initialValues: shape({
+    brand: arrayOf(string),
   }).isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  handleSubmit: func.isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -24,15 +24,13 @@ class CatalogPage extends React.Component {
   render() {
     const { filterOnDisplay, products, match: { params } } = this.props;
 
-    let filter;
-    if (filterOnDisplay)
-      filter = (
-        <FilterComponent
-          handleSubmit={this.props.loadProducts}
-          amount={products.length}
-          initialValues={this.state.values}
-        />
-      );
+    const filter = (
+      <FilterComponent
+        handleSubmit={this.props.loadProducts}
+        amount={products.length}
+        initialValues={this.state.values}
+      />
+    );
 
     return (
       <Article
@@ -47,7 +45,7 @@ class CatalogPage extends React.Component {
           {params.department}
         </Heading>
         <Section pad="none" align="start" direction="row" colorIndex="light-2">
-          {filter}
+          {filterOnDisplay && filter}
           <Tiles tile={CatalogPageTile} tiles={products} />
         </Section>
       </Article>
@@ -64,12 +62,14 @@ CatalogPage.defaultProps = {
   products: [],
 };
 
+const { shape, string, func, bool, arrayOf } = PropTypes;
+
 CatalogPage.propTypes = {
-  location: PropTypes.shape({ search: PropTypes.string.isRequired }).isRequired,
-  loadProducts: PropTypes.func.isRequired,
-  filterOnDisplay: PropTypes.bool.isRequired,
-  products: PropTypes.arrayOf(PropTypes.shape),
-  match: PropTypes.shape({ params: PropTypes.shape.isRequired }).isRequired,
+  location: shape({ search: string.isRequired }).isRequired,
+  loadProducts: func.isRequired,
+  filterOnDisplay: bool.isRequired,
+  products: arrayOf(shape),
+  match: shape({ params: shape.isRequired }).isRequired,
 };
 
 export default connect(mapStateToProps, { loadProducts })(CatalogPage);

@@ -52,16 +52,18 @@ DetailViewPage.defaultProps = {
   product: { imgs: [], sizes: [] },
 };
 
+const { shape, string, func, arrayOf } = PropTypes;
+
 DetailViewPage.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape(),
+  match: shape({
+    params: shape(),
   }).isRequired,
-  product: PropTypes.shape({
-    imgs: PropTypes.arrayOf(PropTypes.string),
-    model: PropTypes.string,
-    brand: PropTypes.string,
+  product: shape({
+    imgs: arrayOf(string),
+    model: string,
+    brand: string,
   }),
-  loadCurrentProduct: PropTypes.func.isRequired,
+  loadCurrentProduct: func.isRequired,
 };
 
 export default connect(mapStateToProps, { loadCurrentProduct })(DetailViewPage);

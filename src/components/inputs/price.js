@@ -14,9 +14,11 @@ const PriceInput = ({ input, ...custom }) => (
   </Box>
 );
 
+const { shape, func } = PropTypes;
+
 PriceInput.propTypes = {
-  input: PropTypes.shape({
-    onChange: PropTypes.func.isRequired,
+  input: shape({
+    onChange: func.isRequired,
   }).isRequired,
 };
 

@@ -25,12 +25,14 @@ const CatalogPageTile = props => (
   </Tile>
 );
 
+const { string, number } = PropTypes;
+
 CatalogPageTile.propTypes = {
-  id: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-  brand: PropTypes.string.isRequired,
-  model: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  id: string.isRequired,
+  img: string.isRequired,
+  brand: string.isRequired,
+  model: string.isRequired,
+  price: number.isRequired,
 };
 
 export default CatalogPageTile;

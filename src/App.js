@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { App as GrommetApp } from 'grommet';
-import 'grommet-css';
+import '../node_modules/grommet/grommet.min.css';
 
 import HeaderComponent from './components/header';
 import FooterComponent from './components/footer';
